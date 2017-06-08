@@ -26,6 +26,8 @@ export class TodoStore {
 		this.todos = persistedTodos.map( (todo: {_title: String, completed: Boolean}) => {
 			let ret = new Todo(todo._title);
 			ret.completed = todo.completed;
+console.log('mapping todos')
+			
 			return ret;
 		});
 	}
