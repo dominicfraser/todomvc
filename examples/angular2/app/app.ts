@@ -35,21 +35,26 @@ export default class TodoApp {
 
 	editTodo(todo: Todo) {
 		todo.editing = true;
+console.log('editing')
 	}
 
 	removeCompleted() {
+console.log('removeCompleted')
 		this.todoStore.removeCompleted();
 	}
-
+	
 	toggleCompletion(todo: Todo) {
+console.log('toggleCompletion')
 		this.todoStore.toggleCompletion(todo);
 	}
 
 	remove(todo: Todo){
+console.log('remove')
 		this.todoStore.remove(todo);
 	}
 
 	addTodo() {
+console.log('addTodo')
 		if (this.newTodoText.trim().length) {
 			this.todoStore.add(this.newTodoText);
 			this.newTodoText = '';

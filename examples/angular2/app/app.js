@@ -31,17 +31,22 @@ var TodoApp = (function () {
     };
     TodoApp.prototype.editTodo = function (todo) {
         todo.editing = true;
+        console.log('editing');
     };
     TodoApp.prototype.removeCompleted = function () {
+        console.log('removeCompleted');
         this.todoStore.removeCompleted();
     };
     TodoApp.prototype.toggleCompletion = function (todo) {
+        console.log('toggleCompletion');
         this.todoStore.toggleCompletion(todo);
     };
     TodoApp.prototype.remove = function (todo) {
+        console.log('remove');
         this.todoStore.remove(todo);
     };
     TodoApp.prototype.addTodo = function () {
+        console.log('addTodo');
         if (this.newTodoText.trim().length) {
             this.todoStore.add(this.newTodoText);
             this.newTodoText = '';

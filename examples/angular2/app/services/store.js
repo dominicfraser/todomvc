@@ -41,6 +41,7 @@ var TodoStore = (function () {
         this.updateStore();
     };
     TodoStore.prototype.removeCompleted = function () {
+        console.log('removeCompleted');
         this.todos = this.getWithCompleted(false);
         this.updateStore();
     };
@@ -51,6 +52,12 @@ var TodoStore = (function () {
         return this.getWithCompleted(true);
     };
     TodoStore.prototype.toggleCompletion = function (todo) {
+        if (todo.completed === false) {
+            todo.title = todo.title + " done!";
+        }
+        else {
+            todo.title = todo.title.slice(0, todo.title.length - 6);
+        }
         todo.completed = !todo.completed;
         this.updateStore();
     };
